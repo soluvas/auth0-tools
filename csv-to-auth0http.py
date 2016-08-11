@@ -10,7 +10,7 @@ auth0_token = # get from config.yaml
 
 # read CSV and create array
 users = []
-with open('user.prd.2016-08-09.csv', 'r') as inf:
+with open('in/user.prd.2016-08-09.csv', 'r') as inf:
     csvreader = csv.DictReader(inf)
     for row in csvreader:
         # print(row)
@@ -73,5 +73,5 @@ with open('user.prd.2016-08-09.csv', 'r') as inf:
         users.append(user)
 
 # output JSON
-# with open('auth0-from-csv.json', 'w') as outf:
+# with open('out/auth0-from-csv.json', 'w') as outf:
 #     json.dump(users, outf)

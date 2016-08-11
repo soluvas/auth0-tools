@@ -4,7 +4,7 @@ import json
 
 # read CSV and create array
 users = []
-with open('user.prd.2016-08-09.csv', 'r') as inf:
+with open('in/user.prd.2016-08-09.csv', 'r') as inf:
     csvreader = csv.DictReader(inf)
     for row in csvreader:
         # print(row)
