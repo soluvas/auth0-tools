@@ -4,9 +4,11 @@ import urllib.request
 # import bcrypt
 import re
 import uuid
+import yaml
 
 # TODO
-auth0_token = # get from config.yaml
+with open('config.yaml', 'r') as yamlf:
+    config = yaml.load(yamlf)
 
 # read CSV and create array
 users = []
@@ -62,7 +64,7 @@ with open('in/user.prd.2016-08-09.csv', 'r') as inf:
             data=json.dumps(user).encode('utf8'),
             headers={
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + auth0_token
+                'Authorization': 'Bearer ' + config['auth0-token']
             })
         try:
             resp = urllib.request.urlopen(req)
